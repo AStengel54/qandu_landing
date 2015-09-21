@@ -5,10 +5,13 @@ from .models import *
 
 # Create your views here.
 class Home(TemplateView):
-  template_name = "home.html"
+        template_name = "home.html"
 
 class QuestionCreateView(CreateView):
-  model = Question
-  template_name = "question/question_form.html"
-  fields = ['title', 'description']
-  success_url = reverse_lazy('home')
+        model = Question
+        template_name = "question/question_form.html"
+        fields = ['title', 'description']
+        success_url = reverse_lazy('success')
+        
+class Success(TemplateView):
+        template_name = "success.html"
